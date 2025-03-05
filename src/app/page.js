@@ -26,6 +26,7 @@ export default function Home() {
         width={300}
         alt="house plants"
       />
+      <p className="text-red-100">Trying tailwind!</p>
     </div>
   );
 }
