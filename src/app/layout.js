@@ -1,16 +1,24 @@
-import { Geist, Geist_Mono } from "next/font/google";
-import "./globals.css";
+import { Lexend } from "next/font/google";
+import { Moo_Lah_Lah } from "next/font/google";
+// import "./globals.css";
 import Link from "next/link";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+export const lexend = Lexend({
+  weight: "400",
+  // variable: "--font-geist-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+export const mooLahLah = Moo_Lah_Lah({
+  weight: "400",
+  subsets: ["latin-ext"],
+  variable: "--font-mooLahLah",
 });
+
+// const geistMono = Geist_Mono({
+//   variable: "--font-geist-mono",
+//   subsets: ["latin"],
+// });
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +28,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
         <Link href="/new">New Post</Link>
         {children}
       </body>

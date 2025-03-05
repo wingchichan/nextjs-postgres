@@ -8,10 +8,10 @@ export default function Form() {
     const db = new pg.Pool({ connectionString: process.env.DB_CONN });
     const title = formData.get("title");
     const content = formData.get("content");
-    await db.query(`INSERT INTO posts (title, content) VALUES ($1, $2)`, [
-      title,
-      content,
-    ]);
+    await db.query(
+      `INSERT INTO workshop_posts (title, content) VALUES ($1, $2)`,
+      [title, content]
+    );
 
     revalidatePath("/posts");
     redirect("/posts");

@@ -23,8 +23,9 @@ export default async function Post({ params }) {
     connectionString: process.env.DB_CONN,
   });
 
-  const post = (await db.query(`SELECT * FROM posts WHERE id = ${slug.id};`))
-    .rows;
+  const post = (
+    await db.query(`SELECT * FROM workshop_posts WHERE id = ${slug.id};`)
+  ).rows;
 
   return (
     <div>

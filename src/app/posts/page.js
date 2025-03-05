@@ -5,7 +5,7 @@ export default async function PostsPage() {
     connectionString: process.env.DB_CONN,
   });
 
-  const posts = await db.query(`SELECT * FROM posts`);
+  const posts = await db.query(`SELECT * FROM workshop_posts`);
   const data = posts.rows;
 
   return (
